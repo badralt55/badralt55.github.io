@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(153, 238, 238);
+}
+p {
+    font-size: 40px;
+}
+h1 {
+    padding-top: 0%;
+    margin: auto;
+}
+.main {
+    text-align: center;
+    width: 500px;
+    height: 460px;
+    margin: 50px 350px 0 350px;
+    float: left;
+}
+.main .top {
+    width: 500px;
+    height: 230px;  
+}
+.main .down {
+    width: 500px;
+    height: 230px; 
+    overflow-y: auto; 
+}
+button {
+    border-radius: 10rem;
+    width: 150px;
+    height: 30px;
+    border: none;    
+}
+.main .top button:hover {
+    background-color: gray;
+    color:white;
+    border: none;
+
+}

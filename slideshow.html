@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>sliedshow</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>        
+            </ul>
+        </div>
+        <img onclick="togglePause()" src="pic/img1.jpg" height="500px" width="500px">
+
+        <script>
+            var myImages = ["pic/img1.jpg", "pic/img2.jpg", "pic/img3.jpg", "pic/img4.jpg", "pic/img5.jpg"]
+            var imgElement = document.querySelector("img")
+            var i = 0
+            var isPaused = false
+            function togglePause() {
+                if(!isPaused) {
+                    clearInterval(intervalId)
+                }else{
+                    intervalId = setInterval(myFunction,1000)
+                }
+                isPaused = !isPaused
+                console.log(intervalId)
+            }
+            function myFunction() {
+                imgElement.src = myImages[i]
+                i++
+                if (i == myImages.length){
+                    i = 0
+                }
+            }
+            var intervalId = setInterval(myFunction,1000)
+           
+        </script>
+    </body>
+</html>

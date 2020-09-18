@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>To_do_app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <style>
+            .container {
+                width: 350px;
+                height: 500px;
+                background-color: palegreen;
+                margin: 30px auto;
+            }
+            .top {
+                width:350px;
+                height: 100px;
+                background-color: plum;
+                
+            }
+            input {
+                width:240px;
+                height: 90px;
+                margin-top:3px;
+                margin-left: 3px;
+            }
+            button {
+                width:100px;
+                height: 90px;
+                
+            }
+            .down {
+                width:350px;
+                height: 400px;
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>       
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class= "top">
+                <input id="input"/>
+                <button onclick="insert()">+</button>
+            </div>
+            <div div class= "down">
+
+            </div>
+        </div>
+
+        <script>
+            let myInp = document.getElementById("input")
+
+            function insert() {
+                let myDiv = document.createElement("div")
+                myDiv.innerHTML = myInp.value
+
+                document.getElementsByClassName("down")[0].append(myDiv)
+            }
+           
+        </script>
+    </body>
+</html>

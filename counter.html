@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>Counter</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>       
+            </ul>
+        </div>
+
+
+        <button onclick="minus()">-</button>
+        <input id="myInput" type="number">
+        <button onclick="add()">+</button>
+        <button onclick="reset()">reset</button>
+        <h1 id="result">0</h1>
+        <script>
+            var h1 = document.querySelector("h1#result")
+            var input = document.querySelector("#myInput")
+
+            function minus() {
+                if(input.value == "") {
+                    h1.innerHTML--
+                }
+                else {
+                    h1.innerHTML -= input.value
+                }
+            }
+            function add() {
+                if(input.value == "") {
+                    h1.innerHTML++
+                }
+                else {
+                    h1.innerHTML = Number(h1.innerHTML) + Number(input.value)
+                }
+            }
+            function reset() {
+                h1.innerHTML = 0
+                input.value = ""
+            }
+                       
+           
+        </script>
+        
+    </body>
+</html>

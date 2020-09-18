@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>backgroundcolor_changer</title>
+        <link href="style.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>        
+            </ul>
+        </div>
+
+        <button onclick = "change()">Change background</button>
+        <input id="myInput">
+        <button onclick = "color()">Add color</button>
+        
+        <script>
+            var count = -1 
+            var myArray = ["aquamarine" , "green" , "orange" , "red"]
+            
+            function change() {
+                count++
+                document.body.style.backgroundColor = myArray[count]
+              if(count == myArray.length - 1) //herwee count myArray iin urtaas 1er baga bh ym bol
+                count= -1 //countiig hasah -1 bolgoy
+                
+            }
+            setInterval(change,2000) 
+            
+            function color(){
+                document.body.style.backgroundColor = myInput.value
+                if (document.body.style.backgroundColor == myInput.value) {
+                    myArray.push(myInput.value)
+                }
+                else{
+                    alert("Color value is inviled!" + "\n" + "Ямар нэгэн өнгө оруулна уу!")
+                }
+                myInput.value=""
+            }
+            
+            //tuhain hugatsaagaar bainga ajilluulna
+            //setInterval(change,2000)
+            //tuhain hugatsaagaar gants udaa ajilluulna
+             //setTimeout(change,5000)        
+        </script>
+        
+    </body>
+</html>

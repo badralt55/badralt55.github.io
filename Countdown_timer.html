@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>CountDownTimer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <style>
+            .container {
+                height: 200px;
+                width: 400px;
+                background-color: rgb(240, 222, 222);
+                text-align: center;
+                border-radius: 5rem;
+                margin: 100px auto;
+                padding-top: 100px;
+                
+            }
+            button {
+                width: 7rem;
+                height: 2rem;
+                border-radius: 1rem;
+                border: none;
+                
+            }
+            input {
+                width: 7rem;
+                height: 2rem;
+                border-radius: 1rem;
+                border: none;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>        
+            </ul>
+        </div>
+
+        <div class="container">
+            <input id="myInput">
+            <span>seconds</span>
+            <button onclick="myFunction()">set timer</button>
+            <p id="output">0</p>
+        </div>
+        
+        <script>
+            var x
+            var y
+            var myptag = document.getElementById("output")
+
+            function myFunction(){
+                var myInp = document.getElementById("myInput")
+                
+                x = myInp.value
+                y = run()
+                
+            }
+            const run = ()=> {
+                if(x > 0) {
+                        x--
+                        setTimeout(run,1000)
+                        myptag.innerHTML = x
+                    }   
+                }
+                
+        </script>
+
+    </body>
+</html>

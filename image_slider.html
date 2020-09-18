@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>image_slider</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <style>
+            body {
+                background-color: rgb(11, 2, 63);
+            }
+            .container {
+                overflow: hidden;
+                height: 500px;
+                width: 700px;
+                margin: auto;
+            }
+            .slider {
+                width: 100%;
+                height: 500px;
+                display: flex;
+                box-sizing: content-box;
+                flex-direction: row;
+                transition-property: transform;
+                transform: translate3d(0px, 0px, 0px);
+                transition-duration: 0ms;
+                margin: auto;   
+            }
+            .container img {
+                height: 500px;
+                width: 700px;
+            }
+            .myButton {
+                width: 700px;
+                height: 100px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li>        
+            </ul>
+        </div>
+
+        <div class="container">
+            <div id="slider-outer" class="slider">
+                <img src="pic2/img1.jpg" />
+                <img src="pic2/img2.jpg" />
+                <img src="pic2/img3.jpg" />
+                <img src="pic2/img4.jpeg" />
+                <img src="pic2/img5.jpg" />
+                <img src="pic2/img6.jpg" />
+                <img src="pic2/img7.jpg" />
+                <img src="pic2/img8.jpg" />
+            </div>
+        </div>
+        
+        <div class="myButton">
+            <button onclick="prev()">Prev</button>
+            <button onclick="next()">Next</button>
+        </div>
+           
+        
+        <script>
+            const container = document.getElementById('slider-outer')
+            let indx = 0
+            const nextButton = document.querySelectorAll("button")[1]
+            //next button daragdahad
+            function next() {
+                indx++;
+                const axis = indx * -1
+                
+                if (axis < -7) {
+                    axis = indx * -1
+                    
+                }else if(axis < -8) {
+                    axis = -7
+                    
+                }else if (axis == -7) {
+                    nextButton.disabled = true
+                }
+                container.style.transform = `translateX(calc(700px*(${axis})))`
+                container.style.transitionDuration = '1000ms'
+            }
+            //prev button daragdahad
+            function prev() {
+                indx = 0
+                container.style.transform = `translateX(calc(700px* 0))`
+                container.style.transitionDuration = '3000ms'
+                nextButton.disabled = false  
+            } 
+        </script>
+    </body>
+</html>

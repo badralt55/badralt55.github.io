@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <style>
+            div {
+                height: 250px;
+                width: 200px;
+                margin:60px auto;
+            }
+            input {
+                height: 60px;
+                width: 200px;
+                font-size: 30px;
+            }
+            button {
+                height: 45px;
+                width: 46px;
+                font-size: 20px;
+                color: rgb(90, 86, 86);
+            }
+            .num {
+                background-color: whitesmoke;
+                border: none;
+            }
+            .sum {
+                background-color:rgb(238, 197, 204);
+                border: none;
+            }
+            .clear {
+                background-color:rgb(189, 181, 181);
+                border: none;
+            }
+            .chara {
+                background-color:rgb(255, 236, 223);
+                border: none;
+        </style>
+    </head>
+    <body>
+        <div class = "myList">
+                    <ul>
+                        <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="Class-list.html">Class list</a></li>
+                        <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                        <li><a href="Counter.html">Counter</a></li>
+                        <li><a href="image_slider.html">Image slider</a></li>
+                        <li><a href="login_if_else.html">Login if else</a></li>
+                        <li><a href="slideshow.html">Slideshow</a></li>
+                        <li><a href="toDoApp.html">To do list</a></li>
+                        <li><a href="stopwatch.html">Stopwatch</a></li>        
+                    </ul>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td colspan="4"><input id="myInput" disabled></input></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert(7)" class="num">7</button></td>
+                    <td><button onclick="insert(8)" class="num">8</button></td>
+                    <td><button onclick="insert(9)" class="num">9</button></td>
+                    <td><button onclick="insert('*')" class="chara">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert(4)" class="num">4</button></td>
+                    <td><button onclick="insert(5)" class="num">5</button></td>
+                    <td><button onclick="insert(6)" class="num">6</button></td>
+                    <td><button onclick="insert('-')" class="chara">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert(1)" class="num">1</button></td>
+                    <td><button onclick="insert(2)" class="num">2</button></td>
+                    <td><button onclick="insert(3)" class="num">3</button></td>
+                    <td><button onclick="insert('+')" class="chara">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="clean()" class="clear">C</button></td>
+                    <td><button onclick="insert(0)" class="num">0</button></td>
+                    <td><button onclick="insert('/')" class="chara">/</button></td>
+                    <td><button onclick="equal()" class="sum">=</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            let myInp = document.getElementById("myInput")
+            function clean() {
+                myInp.value = myInp.value.substring(0,myInp.value.length-1)
+            }
+            function insert(arg) {
+                myInp.value = myInp.value + arg
+            }
+            function equal() {
+                myInp.value = eval(myInp.value)
+            }
+            
+        </script>
+    </body>
+</html>
