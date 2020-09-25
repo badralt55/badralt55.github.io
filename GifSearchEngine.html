@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>GIF_search_engine</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <style>
+            .container {
+                              
+                text-align: center;  
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "myList">
+            <ul>
+                <li><a href="backgroundcolor_changer.html">Background Color Changer</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="Class-list.html">Class list</a></li>
+                <li><a href="Countdown_timer.html">Countdown timer</a></li>
+                <li><a href="Counter.html">Counter</a></li>
+                <li><a href="image_slider.html">Image slider</a></li>
+                <li><a href="login_if_else.html">Login if else</a></li>
+                <li><a href="slideshow.html">Slideshow</a></li>
+                <li><a href="toDoApp.html">To do list</a></li>
+                <li><a href="stopwatch.html">Stopwatch</a></li> 
+                <li><a href="GifSearchEngine.html">GIFSearchEngine</a></li>       
+            </ul>
+        </div>
+       
+        <div class="container">
+            <header>
+                <form id="search-form">  
+                    <input id="search-input" type="text" placeholder="search">
+                    <button type="submit">Search</button>
+                </form>
+            </header>
+            <div id="results" class="results">
+                <!-- gif images here -->
+            </div>
+
+        </div>
+        
+        <script >
+            const searchForm = document.getElementById('search-form')
+            const searchInput = document.getElementById('search-input')
+            const resultsEl = document.getElementById('results')
+
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault()
+                const q = searchInput.value
+                search(q)
+            })
+
+            function search(q) {
+                
+                const apikey = '3YTld1afZJs75yK9jSF0qXcX5PdzhhKT'
+                const path = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${q}`
+                
+                fetch(path).then(function(res) {
+                    return res.json() 
+                }).then(function(json){
+                    console.log(json.data[0].images.fixed_width.url)
+                    
+                    let resultsHTML = ''
+
+                    json.data.forEach(function(obj) {
+                        console.log(obj)
+
+                        const url = obj.images.fixed_width.url
+                        const width = obj.images.fixed_width.width
+                        const height = obj.images.fixed_width.height
+                        const title = obj.title
+                        
+                        resultsHTML += `<img 
+                            src="${url}" 
+                            width="${width}"
+                            height="${height}"
+                            alt="${title}"
+                            >`
+                    })
+                    resultsEl.innerHTML = resultsHTML
+                }).catch(function(err) {
+                    console.log(err.message)
+                })
+                }
+            
+            </script>
+        </body>
+</html>
